@@ -1,0 +1,43 @@
+#' Un tibble con i dati dei parametri meteorologici dei punti stazione
+#'
+#' @description
+#' Dati meteo associati ai punti stazione. Si tratta dei dati estratti da netCDF delle rianalisi ERA5
+#' Il dataset non contiene dati mancanti nei parametri meteoclimatici.
+#'
+#' @format Un tibble con 23 colonne e 2250900 osservazioni
+#' \describe{
+#'  \item{station_code}{Codice stazione}
+#'  \item{station_eu_code}{Codice europeo della stazione: da utilizzare per il merge con i dati degli inquinanti}
+#'  \item{year}{Anno dell'osservazione}
+#'  \item{week}{Settimana dell'osservazione ottenuta mediante lubridate::isoweek}  
+#'  \item{t2m}{Temperatura media giornaliera in gradi Celsius}
+#'  \item{tmin2m}{Temperatura minima giornaliera in gradi Celsius}
+#'  \item{tmax2m}{Temperatura massima giornaliera in gradi Celsius}
+#'  \item{tp}{Precipitazione cumulata giornaliera in mm}
+#'  \item{ptp}{Precipitazione cumulata giornaliera del giorno precedente, in mm}
+#'  \item{rh}{Umidita' relativa, %}
+#'  \item{u10m}{Componente u del vento a 10 metri}
+#'  \item{v10m}{Componente v del vento a 10 metri}
+#'  \item{sp}{Surface pressure in hPa}
+#'  \item{nirradiance}{Net irradiance}
+#'  \item{pbl00}{Planet boundary layer at 00:00 in km}
+#'  \item{pbl12}{Planet boundary layer at 12:00 in km}
+#'  \item{pblmin}{Planet boundary layer, minimo giornaliero}
+#'  \item{pblmax}{Planet boundary layer, massimo giornaliero}
+#'  \item{coordx}{X, epsg: 32632}
+#'  \item{coordy}{Y, epsg: 32632}
+#'  \item{altitudedem}{Quota del punto stazione in metri estratta dal DEM GLOBE.}
+#'  \item{wdir}{Direzione del vento in gradi. Dato ricalcolato da Guido.}
+#'  \item{wspeed}{Velocita' del vento in m/s. Dato ricalcolato da Guido.}
+#'  \item{wspeed}{Velocita' del vento del giorno precedente in m/s. Dato ricalcolato da Guido.}
+#' }
+#'
+#' @note
+#' I dati del vento sono stati ricalcolati da Guido mediante il pacchetto Rsenal. Altri pacchetti testati per ricalcolare il
+#' vento: kehra (sembra avere unbug che produce un errore), rWind (sembra non fornire sempre i risultati che si otterrebbero utilizzando
+#' la formula fornita dall'ECMWF.). I dati di altitudine estratti dal dem sono stati ricalcolati da Guido (15 febbraio 2021) perche' quelli
+#' forniti dai colleghi contenevano NA.
+#'
+#' @usage
+#' meteo_settimanali_standardizzati
+"meteo_settimanali_standardizzati"

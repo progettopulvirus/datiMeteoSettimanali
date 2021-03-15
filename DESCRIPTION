@@ -1,0 +1,19 @@
+Package: datiMeteoSettimanali
+Title: Dati meteo aggregati a livello settimanale
+Version: 1.0.0.0
+Authors@R: 
+    person(given = "Guido",
+           family = "Fioravanti",
+           role = c("aut", "cre"),
+           email = "guido.fioravanti@isprambiente.it",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Aggregati settimanali dei dati del pacchetto datiMeteo
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
+Imports: 
+    tibble
